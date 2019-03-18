@@ -1,0 +1,29 @@
+
+public class SecondHighest {
+	
+	public static void main(String[] args) {
+		
+		int arr[]= {7,9,0,2};
+		
+		int max =arr[0];
+		int secondHigh =arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			
+			if (arr[i]>max) {
+				secondHigh=max;
+				max=arr[i];
+				}
+			else if (arr[i]>secondHigh && arr[i]!= max) {
+				arr[i]=secondHigh;	
+			}
+				
+		}
+		
+		System.out.println("the second highest no is "+secondHigh);
+		
+	}
+	
+	
+	
+	
+	

@@ -1,0 +1,53 @@
+
+package dice;
+
+import java.util.Random;
+
+
+public class Dice {
+
+static int no_of_sides = 6;
+int face_value = 0;
+
+int roll() {
+Random r = new Random();
+this.face_value = r.nextInt(no_of_sides) + 1;
+return this.face_value;
+}
+
+static class FirstDice {
+
+static String color = "red";
+}
+
+static class SecondDice {
+
+static String color = "black";
+
+}
+
+public static void main(String[] args) {
+
+Dice d = new Dice();
+
+System.out.println("The first die has color " + FirstDice.color + " and has face value after rolling as " + d.roll());
+System.out.println("The second die has color " + SecondDice.color + " and has face value after rolling as " + d.roll());
+}
+
+}
+
+
+
+
+
+/**    comments
+
+Here, we have used the static keyword to call the variable(colour ) directly in main method.
+
+We made the inner class(firstDice) static and then the variable colour static to display the colour of  first dice in main method.
+
+Also, in the main method which is static, any variable which needs to be accessed should be static and for the non-static, the variable, function or method, which needs to be  accessed should be accessed by creating an instance of the class, which we have done for calling the function roll in the main method.
+
+
+
+**/

@@ -1,0 +1,117 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package WordSplit;
+
+import java.util.Arrays;
+
+/**
+ *
+ * @author SHASHI
+ */
+public class WordsSplit {
+    
+    
+    public static void main(String[] args) {
+        
+        String sentences=  "Generates HTML. Building HTML from a helper class is\n" +
+"probably not really worth it for real projects (JSP is\n" +
+"better), but we haven’t covered logic in servlets yet. But\n" +
+"the general principle still holds: if you are doing the same\n" +
+"thing in several servlets, move the code into shared class";
+        String[] words = sentences.split("[\\n .(),]");      // as many punctuation we put we receive as many seperation point on the sentences.
+        
+        System.out.println(" In string form"+Arrays.toString(words)  );
+        
+        for (int i = 0; i < words.length; i++) {
+            System.out.println(" "+words[i]);
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+}
+
+
+##############################################################################OUTPUT###################################################
+
+run:
+ In string form[Generates, HTML, , Building, HTML, from, a, helper, class, is, probably, not, really, worth, it, for, real, projects, , JSP, is, better, , , but, we, haven’t, covered, logic, in, servlets, yet, , But, the, general, principle, still, holds:, if, you, are, doing, the, same, thing, in, several, servlets, , move, the, code, into, shared, class]
+ Generates
+ HTML
+ 
+ Building
+ HTML
+ from
+ a
+ helper
+ class
+ is
+ probably
+ not
+ really
+ worth
+ it
+ for
+ real
+ projects
+ 
+ JSP
+ is
+ better
+ 
+ 
+ but
+ we
+ haven’t
+ covered
+ logic
+ in
+ servlets
+ yet
+ 
+ But
+ the
+ general
+ principle
+ still
+ holds:
+ if
+ you
+ are
+ doing
+ the
+ same
+ thing
+ in
+ several
+ servlets
+ 
+ move
+ the
+ code
+ into
+ shared
+ class
+BUILD SUCCESSFUL (total time: 0 seconds)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ public class HAshmap {
 		if (ar.containsKey(1)) {
 			System.out.println(" Key is present and we are removing that ");
 			System.out.println("new array " +ar.remove(1));
-			
+			System.out.println(ar);
 			
 		}
 	}

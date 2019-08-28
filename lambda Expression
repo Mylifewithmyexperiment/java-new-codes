@@ -1,0 +1,13 @@
+interface aa{
+	public int sum(int a);
+}
+public class demo {
+
+	public static void main(String[] args) {
+		
+		aa avv=a->a+a;
+		System.out.println( " "+ avv.sum(3));
+		
+	}
+	
+}

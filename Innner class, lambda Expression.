@@ -1,0 +1,91 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Employee {
+
+	String name;
+	int eno;
+
+	public Employee(String name, int eno) {
+		super();
+		this.name = name;
+		this.eno = eno;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", eno=" + eno + "]";
+	}
+
+}
+
+public class ComapreToTest {
+
+// the reason why main class is written at last i knew.
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		ArrayList<Employee> l = new ArrayList<Employee>();
+
+		l.add(new Employee("a", 1));
+		l.add(new Employee("b", 2));
+		l.add(new Employee("d", 5));
+		l.add(new Employee("shashi", 0));
+		l.add(new Employee("s", 2));
+
+		Comparator<Employee> cc = (Employee e1, Employee e2) ->  (e1.name).compareTo(e2.name);
+
+		// Collections.sort(l,cc);
+		
+		Collections.sort(l, (e1, e2) -> e1.name.compareTo(e2.name));
+
+		System.out.println(l);
+
+		Runnable r = () -> {
+			for (int i = 0; i < 11; i++) {
+				System.err.println("sdfs");
+			}
+
+		};
+		Thread t= new Thread(r);
+		
+		for (int i = 0; i < 11; i++) {
+			System.out.println("main thread");
+		}
+		
+		t.start(); 
+	}
+
+}
+
+
+-------------------------------------------------- OUTPUT----------------------------------------------------------------
+
+[Employee [name=a, eno=1], Employee [name=b, eno=2], Employee [name=d, eno=5], Employee [name=s, eno=2], Employee [name=shashi, eno=0]]
+
+main thread
+main thread
+main thread
+main thread
+main thread
+main thread
+main thread
+main thread
+main thread
+main thread
+main thread
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+sdfs
+

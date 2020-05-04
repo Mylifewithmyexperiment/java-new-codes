@@ -1,0 +1,32 @@
+package com.test.monika;
+
+public class QuadaticEquation {
+
+	private int root1;
+	private int root2;
+
+	int solution_count(int a, int b, int c) {
+		int sq_root = (b * b) - (4 * a * c);
+		if (sq_root >= 0) {
+			root1 = (-b + sq_root) / 2 * a;
+			root2 = (-b - sq_root) / 2 * a;
+			if (root1 != root2) {
+				return 2;
+			} else {
+				return 1;
+			}
+		}
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		QuadaticEquation qe = new QuadaticEquation();
+		int a = 1, b = 0, c = -1;
+		if (a > 0) {
+			System.out.println(qe.solution_count(a, b, c));
+		} else {
+			System.out.println("a is less than 0");
+		}
+	}
+
+}

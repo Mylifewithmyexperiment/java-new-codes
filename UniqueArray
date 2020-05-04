@@ -1,0 +1,42 @@
+package com.test.monika;
+
+import java.util.HashMap;
+
+public class UniqueArray {
+	boolean uniqueArray(int[] arr1, int[] arr2) {
+		HashMap<Integer, Integer> hm1 = new HashMap<>();
+		for (int i = 0; i < arr1.length; i++) {
+			hm1.put(arr1[i], i);
+		}
+		HashMap<Integer, Integer> hm2 = new HashMap<>();
+		for (int i = 0; i < arr2.length; i++) {
+			hm2.put(arr2[i], i);
+		}
+
+		if (hm1.size() == hm2.size()) {
+			return true;
+		}
+		return false;
+	}
+	public static void main(String[] args) {
+		UniqueArray ua = new UniqueArray();
+
+		int arr1[] = { 1, 3, 4, 4, 6 };
+		int arr2[] = { 3, 5, 7 };
+		boolean result = ua.uniqueArray(arr1, arr2);
+		System.out.println(result);
+
+		// case 2
+		int arr11[] = { 9, 8, 7, 6 };
+		int arr22[] = { 4, 4, 5, 1 };
+		boolean result2 = ua.uniqueArray(arr11, arr22);
+		System.out.println(result2);
+
+		// case 3
+		int arr111[] = { 2 };
+		int arr222[] = { 3, 3, 3, 3 };
+		boolean result3 = ua.uniqueArray(arr111, arr222);
+		System.out.println(result3);
+	}
+
+}

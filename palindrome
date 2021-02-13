@@ -1,0 +1,31 @@
+package com.java;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		if (palindrome(128321) == 1) 
+			System.out.println("palindrome");
+	   else 
+			System.out.println("non palindrome");
+	}
+
+	static int palindrome(int n) {
+		int num = n,fianlNo = n;
+		int c = 0, sum = 0;
+		do {
+			num = num / 10;
+			c++;
+		} while (num > 0);
+
+		for (int i = c-1; i >= 0; i--) {
+			sum = sum + (int) ((Math.pow(10, i) * (n % 10)));
+			n = n / 10;
+		}
+		System.out.println(sum);
+		if (sum == fianlNo) {
+			return 1;
+		}
+		return 0;
+	}
+
+}
